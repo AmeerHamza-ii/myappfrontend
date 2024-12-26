@@ -1,1 +1,1 @@
-export const BACKENDURL="https://my-approved-backed-ugiw.vercel.app"
+export const BACKENDURL = "https://myappbackend-lg9y.vercel.app";
