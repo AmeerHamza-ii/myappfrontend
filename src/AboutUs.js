@@ -16,9 +16,9 @@ const AboutUs = () => {
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
       <section className="about-us px-4 md:px-32  ">
-        <div className="grid grid-cols-1  lg:grid-cols-3 gap-10 border border-red-300 items-stretch">
+        <div className="grid grid-cols-1  lg:grid-cols-3 gap-10">
           {/* Card 1 */}
-          <div className="card flex-shrink-0  items-stretch lg:h-[800px] md:h-[800px] xl:h-[1300px]">
+          <div className="card flex-shrink-0  items-stretch ">
             <div className="image-card">
               <div className="relative">
                 <img
@@ -43,7 +43,7 @@ const AboutUs = () => {
             </div>
           </div>
           {/* Card 2 */}
-          <div className="card flex-shrink-0   items-stretch lg:h-[800px]  md:h-[800px] xl:h-[1300px]">
+          <div className="card flex-shrink-0   items-stretch">
             <div className="image-card">
               <div className="relative">
                 <img
@@ -69,7 +69,7 @@ const AboutUs = () => {
             </div>
           </div>
           {/* Card 3 */}
-          <div className="card flex-shrink-0  items-stretch lg:h-[800px] md:h-[800px] xl:h-[1300px]">
+          <div className="card flex-shrink-0  items-stretch">
             <div className="image-card">
               <div className="relative">
                 <img

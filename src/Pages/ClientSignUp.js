@@ -89,13 +89,10 @@ const ClientRegister = () => {
 
     try {
       // Make the API call
-      const response = await axios.post(
-        `${BACKENDURL}/client/register`,
-        {
-          ...formData,
-          phoneNumber: `+${formData.phoneNumber}`, // Ensure phoneNumber is formatted
-        }
-      );
+      const response = await axios.post(`${BACKENDURL}/client/register`, {
+        ...formData,
+        phoneNumber: `+${formData.phoneNumber}`, // Ensure phoneNumber is formatted
+      });
 
       // Show success message
       setSuccessMessage(response.data.message || "Registration successful!");
@@ -116,7 +113,7 @@ const ClientRegister = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="lg:w-[40%] w-[90%] mx-auto min-h-screen"
+        className="lg:w-[40%] w-[90%] mx-auto h-[580px]"
       >
         <input
           type="text"

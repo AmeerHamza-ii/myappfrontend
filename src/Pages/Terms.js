@@ -3,7 +3,7 @@ import React from "react";
 const Terms = () => {
   return (
     <div>
-      <main className="banner-full about-banner md:px-4 md:py-10"></main>
+      <main className="banner-full about-banner md:px-4  md:py-10"></main>
 
       <div className="w-full pb-10">
         <div className="max-w-[1120px] lg:mt-[10px] rounded-lg bg-white w-full mx-auto shadow-2xl drop-shadow-2xl px-2 md:px-10 py-10 font-rubik">

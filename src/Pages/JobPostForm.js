@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./JobPostForm.css"; // Optional CSS for styling
 import { motion } from "framer-motion";
-import { toast } from "react-toastify"
+import { toast } from "react-toastify";
 import { BACKENDURL } from "../config";
 
 const boxStyle = {
-  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", 
-  border: "1px solid rgba(0, 0, 0, 0.1)", 
-  borderRadius: "8px", 
-  padding: "20px", 
-  backgroundColor: "#fff", 
+  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+  border: "1px solid rgba(0, 0, 0, 0.1)",
+  borderRadius: "8px",
+  padding: "20px",
+  backgroundColor: "#fff",
 };
 
 const PostJob = () => {

@@ -7,8 +7,11 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const { t } = useTranslation();
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
   const [selectedLanguage, setSelectedLanguage] = useState("🇬🇧 English");
 
   const handleLanguageChange = (language) => {
@@ -75,24 +78,24 @@ const Header = () => {
                   <FaCaretDown className="text-xs text-gray-600" />
                 </button>
                 <div className="dropdown-content ">
-                  <div
+                  <Link
                     onClick={() => handleLanguageChange("🇬🇧 English")}
                     className="dropdown-item py-1 pl-4"
                   >
                     🇬🇧 English
-                  </div>
-                  <div
+                  </Link>
+                  <Link
                     onClick={() => handleLanguageChange("🇪🇸 Spanish")}
                     className="dropdown-item py-1 pl-4"
                   >
                     🇪🇸 Spanish
-                  </div>
-                  <div
+                  </Link>
+                  <Link
                     onClick={() => handleLanguageChange("🇫🇷 French")}
                     className="dropdown-item py-1 pl-4"
                   >
                     🇫🇷 French
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -102,72 +105,68 @@ const Header = () => {
       </header>
 
       <div
-        className={`bg-sky-bg flex flex-col items-start gap-4 justify-end px-4 overflow-hidden transition-all duration-1000 ease-in-out ${
+        className={`bg-sky-bg flex  items-start gap-4 justify-end px-4 transition-all duration-1000 ease-in-out buttons pt-2 w-flex justify-center items-center gap-2 ${
           toggleMenu ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="flex flex-col items-center w-full">
-          <div className="buttons pt-2 mx-4  w-flex justify-center items-center gap-2">
-            {/* Trade Mobile Dropdown */}
-            <div className="dropdown">
-              <div>
-                <button className="bordered">Trade &#9660;</button>
-              </div>
-              <div className="dropdown-content">
-                <Link to="/login" className="text-sm">
-                  Log in
-                </Link>
-                <Link to="/register" className="text-sm">
-                  Create A New Account
-                </Link>
-              </div>
-            </div>
+        {/* <div className="flex flex-col items-center w-full"> */}
+        {/* <div className="buttons pt-2 mx-4  w-flex justify-center items-center gap-2"> */}
+        {/* Trade Mobile Dropdown */}
+        <div className="dropdown relative group">
+          <div>
+            <button className="bordered">Trade1 &#9660;</button>
+          </div>
+          <div className="dropdown-content  group-hover:block absolute">
+            <Link to="/login" className="text-sm">
+              Log in
+            </Link>
+            <Link to="/register" className="text-sm">
+              Create A New Account
+            </Link>
+          </div>
+        </div>
 
-            {/* Client Mobile Dropdown */}
-            <div className="dropdown">
-              <button className="bordered">Client &#9660;</button>
-              <div className="dropdown-content">
-                <Link to="/signin" className="text-sm">
-                  Login
-                </Link>
-                <Link to="/signup" className="text-sm">
-                  Register
-                </Link>
-                <hr />
-                <a href="#">
-                  Night Mode <FaMoon />
-                </a>
-              </div>
-            </div>
+        {/* Client Mobile Dropdown */}
+        <div className="dropdown">
+          <button className="bordered">Client &#9660;</button>
+          <div className="dropdown-content">
+            <Link to="/signin" className="text-sm">
+              Login
+            </Link>
+            <Link to="/signup" className="text-sm">
+              Register
+            </Link>
+          </div>
+        </div>
 
-            {/* Language Mobile Dropdown */}
-            <div className="dropdown">
-              <button className="yellow">Language &#9660;</button>
-              <div className="dropdown-content">
-                <div
-                  onClick={() => handleLanguageChange("🇬🇧 English")}
-                  className="dropdown-item"
-                >
-                  🇬🇧 English
-                </div>
-                <div
-                  onClick={() => handleLanguageChange("🇪🇸 Spanish")}
-                  className="dropdown-item"
-                >
-                  🇪🇸 Spanish
-                </div>
-                <div
-                  onClick={() => handleLanguageChange("🇫🇷 French")}
-                  className="dropdown-item"
-                >
-                  🇫🇷 French
-                </div>
-              </div>
-            </div>
+        {/* Language Mobile Dropdown */}
+        <div className="dropdown">
+          <button className="yellow">🇬🇧 English &#9660;</button>
+          <div className="dropdown-content">
+            <Link
+              onClick={() => handleLanguageChange("🇬🇧 English")}
+              className="dropdown-item"
+            >
+              🇬🇧 English
+            </Link>
+            <Link
+              onClick={() => handleLanguageChange("🇪🇸 Spanish")}
+              className="dropdown-item"
+            >
+              🇪🇸 Spanish
+            </Link>
+            <Link
+              onClick={() => handleLanguageChange("🇫🇷 French")}
+              className="dropdown-item"
+            >
+              🇫🇷 French
+            </Link>
           </div>
         </div>
       </div>
     </div>
+    // </div>
+    // </div>
   );
 };
 
